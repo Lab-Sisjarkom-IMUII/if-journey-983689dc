@@ -1,0 +1,245 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 120 20% 98%;
+    --foreground: 150 30% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 150 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 30% 15%;
+
+    --primary: 158 64% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 158 30% 94%;
+    --secondary-foreground: 158 64% 32%;
+
+    --muted: 150 20% 96%;
+    --muted-foreground: 150 15% 45%;
+
+    --accent: 38 92% 60%;
+    --accent-foreground: 38 92% 20%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 150 20% 90%;
+    --input: 150 20% 90%;
+    --ring: 158 64% 42%;
+
+    --radius: 0.75rem;
+
+    /* Custom colors */
+    --emerald: 158 64% 42%;
+    --emerald-light: 158 60% 90%;
+    --emerald-dark: 158 64% 32%;
+    --mint: 158 40% 96%;
+    --orange: 24 95% 53%;
+    --orange-light: 24 95% 95%;
+    --coral: 16 85% 65%;
+    --teal: 174 62% 47%;
+    --teal-light: 174 60% 94%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(158, 64%, 42%), hsl(174, 62%, 47%));
+    --gradient-hero: linear-gradient(135deg, hsl(158, 64%, 42%), hsl(158, 64%, 32%));
+    --gradient-warm: linear-gradient(135deg, hsl(38, 92%, 60%), hsl(24, 95%, 53%));
+    --gradient-soft: linear-gradient(180deg, hsl(120, 20%, 98%), hsl(158, 40%, 96%));
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(150 30% 15% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(150 30% 15% / 0.1), 0 2px 4px -2px hsl(150 30% 15% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(150 30% 15% / 0.1), 0 4px 6px -4px hsl(150 30% 15% / 0.1);
+    --shadow-glow: 0 0 20px hsl(158 64% 42% / 0.3);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 150 30% 8%;
+    --foreground: 120 20% 98%;
+
+    --card: 150 25% 12%;
+    --card-foreground: 120 20% 98%;
+
+    --popover: 150 25% 12%;
+    --popover-foreground: 120 20% 98%;
+
+    --primary: 158 64% 50%;
+    --primary-foreground: 150 30% 8%;
+
+    --secondary: 150 20% 18%;
+    --secondary-foreground: 158 60% 70%;
+
+    --muted: 150 20% 18%;
+    --muted-foreground: 150 15% 60%;
+
+    --accent: 38 92% 55%;
+    --accent-foreground: 38 92% 95%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 150 20% 20%;
+    --input: 150 20% 20%;
+    --ring: 158 64% 50%;
+
+    --emerald: 158 64% 50%;
+    --emerald-light: 158 40% 20%;
+    --emerald-dark: 158 64% 40%;
+    --mint: 158 30% 15%;
+    --orange: 24 95% 55%;
+    --orange-light: 24 50% 20%;
+    --coral: 16 85% 60%;
+    --teal: 174 62% 50%;
+    --teal-light: 174 40% 20%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* PWA Safe Areas */
+  .safe-area-inset {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  /* Hide scrollbar for mobile */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-warm {
+    background: var(--gradient-warm);
+  }
+
+  .gradient-soft {
+    background: var(--gradient-soft);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out forwards;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes countdown {
+  from {
+    stroke-dashoffset: 0;
+  }
+}
