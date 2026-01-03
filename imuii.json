@@ -2,11 +2,10 @@
   "name": "IFJourney",
   "framework": "react",
   "language": "typescript",
-  "buildCommand": "vite build",
+  "buildCommand": "npm install && npm run build",
   "startCommand": "npm run dev",
   "domain": "if-journey",
   "email": "ekaprclia@gmail.com",
-  "secretKey": "imuii_7803299fd75d3c090c679f7ebd55583530daf866c1e5f95673e7d6c4abaa15de",
-  "repoUrl": "https://github.com/Lab-Sisjarkom-IMUII/ifjourney-bd566683.git",
-  "repo": "ekaprclia/if-journey-hub"
+  "secretKey": "imuii_5d7e8be2f109a9b1fb9c5c32eb168011589f100474fd6e7383cdb5a3cd93ccc7",
+  "repoUrl": "https://github.com/Lab-Sisjarkom-IMUII/if-journey-983689dc.git"
 }
